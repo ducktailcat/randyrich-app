@@ -16,8 +16,8 @@ class CreateCodesTable extends Migration
         Schema::create('codes', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string("code_213")->nullable();
-            $table->string("code_214")->nullable();
+            $table->string('code_213')->nullable();
+            $table->string('code_214')->nullable();
         });
     }
 

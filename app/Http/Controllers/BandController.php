@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class BandController extends Controller
 {
     public function index()
     {
-        $metaTitle = "My Bands";
+        $metaTitle = 'My Bands';
         $desc = "Check out the band I'm currently playing with";
 
         $allBands = [
@@ -19,29 +17,29 @@ class BandController extends Controller
 
                     [
                         'imgTitle' => 'Rock With The Snowman',
-                        'imgSrc' => 'snowman.jpg'
+                        'imgSrc' => 'snowman.jpg',
                     ],
                     [
                         'imgTitle' => 'The Way You Came',
-                        'imgSrc' => 'erste_cd.jpg'
+                        'imgSrc' => 'erste_cd.jpg',
                     ],
                     [
                         'imgTitle' => 'Mr. All Night Rock',
-                        'imgSrc' => 'glenn.jpg'
+                        'imgSrc' => 'glenn.jpg',
                     ],
                     [
                         'imgTitle' => 'Bye Bye Mr. Blues',
-                        'imgSrc' => 'mrblues.jpg'
+                        'imgSrc' => 'mrblues.jpg',
                     ],
                     [
                         'imgTitle' => 'Hillbilly Cat',
-                        'imgSrc' => 'single.gif'
+                        'imgSrc' => 'single.gif',
                     ],
                     [
                         'imgTitle' => 'Dance, Dance, Dance',
-                        'imgSrc' => 'ep.jpg'
+                        'imgSrc' => 'ep.jpg',
 
-                    ]
+                    ],
                 ],
 
             ],
@@ -51,45 +49,46 @@ class BandController extends Controller
                 'records' => [
                     [
                         'imgTitle' => 'Shake Rattle And Blue Moon',
-                        'imgSrc' => 'shakerattle.jpg'
+                        'imgSrc' => 'shakerattle.jpg',
                     ],
                     [
                         'imgTitle' => 'A Night Out In Koolsville',
-                        'imgSrc' => 'nightout.jpg'
+                        'imgSrc' => 'nightout.jpg',
                     ],
                     [
                         'imgTitle' => 'The Many Sides',
-                        'imgSrc' => 'manysides.jpg'
+                        'imgSrc' => 'manysides.jpg',
                     ],
                     [
                         'imgTitle' => 'The House Is Rockin',
-                        'imgSrc' => 'house.jpg'
+                        'imgSrc' => 'house.jpg',
                     ],
                     [
                         'imgTitle' => 'Drinkin\' Wine',
-                        'imgSrc' => 'CD-Cover.JPG'
-                    ]
-                ]
+                        'imgSrc' => 'CD-Cover.JPG',
+                    ],
+                ],
+            ],
+            [
+                'title' => 'Sun and Lightning',
+                'text' => 'The original plan was to take a trip together to visit original venues, studios and artists from the 1950s in the US. Our highlight was supposed to be recordings at the legendary SUN Studios. But because the engineer didn\'t share our passion for the old sound, this plan was shattered. So we\'ve recorded  our six songs a few months later in Berlin at Lightning Recorders. These records got so much praise from all kinds of sources and promoters started calling us, so we decided to get that show on the road. You\'ll hear a amix of well known and obscure Sun-Songs plus our originals following the Memphis tradition.',
+                'records' => [
+                    [
+                        'imgTitle' => 'Sun and Lightning',
+                        'imgSrc' => 'sun-cover.jpg',
                     ],
                     [
-                        'title' => 'Sun and Lightning',
-                        'text' => 'The original plan was to take a trip together to visit original venues, studios and artists from the 1950s in the US. Our highlight was supposed to be recordings at the legendary SUN Studios. But because the engineer didn\'t share our passion for the old sound, this plan was shattered. So we\'ve recorded  our six songs a few months later in Berlin at Lightning Recorders. These records got so much praise from all kinds of sources and promoters started calling us, so we decided to get that show on the road. You\'ll hear a amix of well known and obscure Sun-Songs plus our originals following the Memphis tradition.',
-                        'records' => [
-                            [
-                                'imgTitle' => 'Sun and Lightning',
-                                'imgSrc' => 'sun-cover.jpg'
-                            ],
-                            [
-                                'imgTitle' => 'Ike and The Capers',
-                                'imgSrc' => 'ike-lochcover.jpg'
-                            ],
-                            [
-                                'imgTitle' => 'Rock\'n\'Roll Show',
-                                'imgSrc' => 'rnr-show-small.jpg'
-                            ]
-                        ]
-                    ]
+                        'imgTitle' => 'Ike and The Capers',
+                        'imgSrc' => 'ike-lochcover.jpg',
+                    ],
+                    [
+                        'imgTitle' => 'Rock\'n\'Roll Show',
+                        'imgSrc' => 'rnr-show-small.jpg',
+                    ],
+                ],
+            ],
         ];
+
         return view('frontend.bands', compact('allBands', 'metaTitle', 'desc'));
     }
 }

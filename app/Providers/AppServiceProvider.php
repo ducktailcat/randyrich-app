@@ -2,9 +2,9 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\URL;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\URL;
+use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -33,6 +33,5 @@ class AppServiceProvider extends ServiceProvider
         view()->share('day', $today->day);
         view()->share('month', $today->englishMonth);
         view()->share('weekday', $today->englishDayOfWeek);
-
     }
 }
