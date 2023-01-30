@@ -1,0 +1,14 @@
+[
+    {
+        "title": "She Rocked My World",
+        "artist": {"name": "Randy"},
+        "image": "ALBUM COVER",
+        "file": "song1.mp3"
+    },
+    {
+        "title": "She Rocked My World",
+        "artist": {"name": "Randy"},
+        "image": "ALBUM COVER",
+        "file": "song1.mp3"
+    }
+]
