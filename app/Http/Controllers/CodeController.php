@@ -4,10 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Code;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Storage;
 
 class CodeController extends Controller
 {
@@ -17,6 +16,7 @@ class CodeController extends Controller
      * @return \Illuminate\Http\Response
      */
     private $counter = 1;
+
     private $code_from_db;
 
     public function index()
@@ -58,7 +58,7 @@ class CodeController extends Controller
 
     public function checkCode(Request $request)
     {
-        if (!$request->isMethod('post')) {
+        if (! $request->isMethod('post')) {
             return redirect('/');
         }
         $form_data = $request->input();
@@ -68,19 +68,21 @@ class CodeController extends Controller
             $tries = $code_from_db->tries_214;
             Session::put('dylan', $code);
             Session::put('tries', $tries);
+
             return $this->confirmDownload();
         } else {
             if ($code_from_db !== null) {
                 return redirect('/dylan')->with('error_msg', 'you have no downloads left');
             }
+
             return redirect('/dylan')->with('error_msg', 'the code you have entered is not valid');
         }
     }
+
     public function confirmDownload()
     {
         return view('frontend.confirm-download');
     }
-
 
     public function downloadSoundFiles($sound)
     {
@@ -90,26 +92,29 @@ class CodeController extends Controller
         if ($code_from_db !== null) {
             if ($tries > 0) {
                 if ($dylan == $sound) {
-                    $path = "private/koth.zip";
+                    $path = 'private/koth.zip';
                     if (Storage::exists($path)) {
                         Session::decrement('tries');
-                        $code_from_db->tries_214 =  $code_from_db->tries_214 - 1;
+                        $code_from_db->tries_214 = $code_from_db->tries_214 - 1;
                         $code_from_db->save();
+
                         return Response::download(Storage::path($path), 'dylankirk.zip', [
-                            "Cache-Control" => "no-store, no-cache, must-revalidate, max-age=0",
-                            "Cache-Control" => "post-check=0, pre-check=0, false",
-                            "Pragma" => "no-cache",
-                            "Connection" => "close",
+                            'Cache-Control' => 'no-store, no-cache, must-revalidate, max-age=0',
+                            'Cache-Control' => 'post-check=0, pre-check=0, false',
+                            'Pragma' => 'no-cache',
+                            'Connection' => 'close',
                         ]);
                     } else {
-                        dd("not Found");
+                        dd('not Found');
                     }
                 } else {
                     return redirect('/confirm-download')->with('error_msg', 'your code is not valid');
                 }
-            } else 
-            {return redirect('/confirm-download')->with('error_msg', 'you have no downloads left');}
+            } else {
+                return redirect('/confirm-download')->with('error_msg', 'you have no downloads left');
+            }
         }
+
         return redirect('/confirm-download')->with('error_msg', 'your code is not valid');
     }
 

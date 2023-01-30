@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCodesTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -16,8 +16,8 @@ class CreateCodesTable extends Migration
         Schema::create('codes', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string("code_213")->nullable();
-            $table->string("code_214")->nullable();
+            $table->string('code_213')->nullable();
+            $table->string('code_214')->nullable();
         });
     }
 
@@ -30,4 +30,4 @@ class CreateCodesTable extends Migration
     {
         Schema::dropIfExists('codes');
     }
-}
+};
