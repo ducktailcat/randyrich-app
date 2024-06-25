@@ -742,7 +742,7 @@ a.preview-btn {
 }
 .grid-container {
     display: grid;
-    gap: 1.5rem;
+    gap: 1rem;
 }
 .grid-item img {
     width: 100%;
