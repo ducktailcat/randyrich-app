@@ -18,27 +18,24 @@ $(function () {
   });
   //LESSONS-VIDEO-PREVIEW
   $('#lessons-table').on( 'draw.dt', function () {
-    $('.songtitle').on('click', function () {
-      var videoUrl = $(this).attr('data');
+    songPreview()
+  });
+
+function songPreview() {
+  $('.songtitle').on('click', function () {
+    var videoUrl = $(this).attr('data');
+    if (videoUrl) {
       $('#lessonIframe').attr('src', 'https://www.youtube.com/embed/' + videoUrl)
       $('#videoModal').css('display', 'block').fadeIn();
       $('#videoModal').addClass('active');
-    })
-    $('#closeModal').on('click', function () {
-      $('#lessonIframe').attr('src', '')
-      $('#videoModal').css('display', 'none').fadeOut();
-    });
-} );
-  $('.songtitle').on('click', function () {
-    var videoUrl = $(this).attr('data');
-    $('#lessonIframe').attr('src', 'https://www.youtube.com/embed/' + videoUrl)
-    $('#videoModal').css('display', 'block').fadeIn();
-    $('#videoModal').addClass('active');
+    }
   })
   $('#closeModal').on('click', function () {
     $('#lessonIframe').attr('src', '')
     $('#videoModal').css('display', 'none').fadeOut();
   });
+}
+songPreview()
 });
 
 //MUSIC-PLAYER

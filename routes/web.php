@@ -29,12 +29,12 @@ Route::get('/contact', function () {
     return view('frontend.contact', compact('metaTitle'));
 });
 Route::get('/music', [MusicController::class, 'index']);
-Route::get('/lessons', function() {
+Route::get('/lessons', function () {
     return view('frontend.lessons.index');
 });
 Route::get('/lessons/songlist', [SonglistController::class, 'index'])->name('songlist');
 Route::get('/lessons/udemy', [UdemyController::class, 'index'])->name('udemy');
-Route::get('/lessons/private', function(){
+Route::get('/lessons/private', function () {
     $metaTitle = "Private Guitar Lessons";
     $desc = "Book a privat online guitar lessons with me by writing me an email. The first lesson is free";
     return view('frontend.lessons.skype', compact('metaTitle', 'desc'));
@@ -50,9 +50,18 @@ Route::get('/impressum', function () {
 Route::get('/udemy', function () {
     return redirect()->route('udemy');
 });
+Route::get('/udemy-specials', function () {
+    $metaTitle = "Udemy Specials";
+    $desc = "Best Prices For My Udemy Courses, Only For A Short While";
+    return view('frontend.lessons.udemy-best-price', compact('metaTitle', 'desc'));
+});
 
-Route::get('/dylan', function() {return view('frontend.dylan');});
+Route::get('/dylan', function () {
+    return view('frontend.dylan');
+});
+Route::get('/stars', function () {
+    return view('frontend.stars');
+});
 Route::post('/codes', [CodeController::class, 'checkCode']);
 Route::get('/download-sounds/{sound}', [CodeController::class, 'downloadSoundFiles'])->name('download-sounds');
 Route::get('/confirm-download', [CodeController::class, 'confirmDownload']);
-

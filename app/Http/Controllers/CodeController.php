@@ -62,18 +62,22 @@ class CodeController extends Controller
             return redirect('/');
         }
         $form_data = $request->input();
-        $code_from_db = Code::where('code_214', $form_data['code'])->first();
-        if ($code_from_db !== null && $code_from_db->tries_214 > 0) {
-            $code = $code_from_db->code_214;
-            $tries = $code_from_db->tries_214;
+        $album = $form_data['album'];
+        $input_code = 'code_'.$album;
+        $input_tries = 'tries_'.$album;
+        $code_from_db = Code::where('code_' . $album, $form_data['code'])->first();
+        if ($code_from_db !== null && $code_from_db->$input_tries > 0) {
+            $code = $code_from_db->$input_code;
+            $tries = $code_from_db->$input_tries;
             Session::put('dylan', $code);
             Session::put('tries', $tries);
+            Session::put('album', $album);
             return $this->confirmDownload();
         } else {
             if ($code_from_db !== null) {
-                return redirect('/dylan')->with('error_msg', 'you have no downloads left');
+                return redirect('/stars')->with('error_msg', 'you have no downloads left');
             }
-            return redirect('/dylan')->with('error_msg', 'the code you have entered is not valid');
+            return redirect('/stars')->with('error_msg', 'the code you have entered is not valid');
         }
     }
     public function confirmDownload()
@@ -82,20 +86,22 @@ class CodeController extends Controller
     }
 
 
-    public function downloadSoundFiles($sound)
+    public function downloadSoundFiles($code)
     {
         $dylan = Session::get('dylan', 'notset');
         $tries = Session::get('tries', null);
-        $code_from_db = Code::where('code_214', $dylan)->first();
+        $album = Session::get('album', null);
+        $db_tries = 'tries_' . $album;
+        $code_from_db = Code::where('code_' . $album, $dylan)->first();
         if ($code_from_db !== null) {
             if ($tries > 0) {
-                if ($dylan == $sound) {
-                    $path = "private/koth.zip";
+                if ($dylan == $code) {
+                    $path = "private/". $album . ".zip";
                     if (Storage::exists($path)) {
                         Session::decrement('tries');
-                        $code_from_db->tries_214 =  $code_from_db->tries_214 - 1;
+                        $code_from_db->$db_tries =  $code_from_db->$db_tries - 1;
                         $code_from_db->save();
-                        return Response::download(Storage::path($path), 'dylankirk.zip', [
+                        return Response::download(Storage::path($path), 'album.zip', [
                             "Cache-Control" => "no-store, no-cache, must-revalidate, max-age=0",
                             "Cache-Control" => "post-check=0, pre-check=0, false",
                             "Pragma" => "no-cache",

@@ -5,9 +5,9 @@
         <div class="inner-row home">
             <div class="home-col home-col-left">
                 <div class="home-article text-center">
-                    <h3 class="top" style="line-height: 1.4em">NEW Emerald Sampler Recorded</h3>
+                    <h3 class="top" style="line-height: 1.4em">NEW Emerald Sampler Out On CD!</h3>
                     <p>
-                        We've recorded a brand new album featuring Dylan Kirk, Jason Starday, Humpty, Axel and myself. The record is calles The Emerald Records Hit Parade Of Stars and will be available hopefully in April just in time for the Berlin Shake
+                        Our brand new album featuring Dylan Kirk, Jason Starday, Humpty, Axel and myself is now out on CD. The longplayer is called The Emerald Records Hit Parade Of Stars and features a great variety of self penned songs ranging from rockabilly over piano rock 'n' roll, doowop all the way to a lovely ballad to finish everything of. The LP will be hopefully available next week for our show at the Berlin Shake.
                     </p>
                     <img src="/img/emerald-sampler.jpg" alt="Frontcover Emerald Sampler"></a>
                 </div>
@@ -17,7 +17,7 @@
                         I teamed up with the fantastic Darrel Higham to present to you 5 Eddie Cochran Songs and 5 Gene Vincent songs in my new video course on Udemy. You can get it for just 14,99 USD by clicking the link below.
                         <br />
                         <a
-                       href="https://www.udemy.com/course/gene-and-eddie/?couponCode=RR-GENE-EDDIE-33"
+                       href="https://www.udemy.com/course/gene-and-eddie/?couponCode=RR-GENE-EDDIE-36"
                        target="_blank"><strong>The Guitar Of Gene and Eddie</strong></a>
                     </p>
                 </div>
@@ -53,7 +53,7 @@
                 </table>
                 <h3 class="mt-5">Check Out My Latest Guitar Lesson </h3>
                 <div class="modal-content">
-                    <iframe id="home-iframe" class="lesson-iframe" src="https://www.youtube.com/embed/oNoeWcCAE-U" title="YouTube video player" frameborder="10px" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe id="home-iframe" class="lesson-iframe" src="https://www.youtube.com/embed/YMCxeZXkq5o" title="YouTube video player" frameborder="10px" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 <p style="text-align: center">
                     <a href="{{ route('songlist') }}"><strong>See All Rockabilly Guitar Lessons Here</strong></a>

@@ -5,6 +5,7 @@
         let code = @json(session('dylan'));
         const referral = setTimeout(() => {
         location.href=`http://127.0.0.1:8000/download-sounds/${code}`
+        //location.href=`https://randyrich.de/download-sounds/${code}`
     },4000);
     }
 </script>

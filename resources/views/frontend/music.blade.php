@@ -56,8 +56,9 @@
                         <br> 2018 Ike and The Capers - Single <em>"Wow / All I Can See Is Blue"</em> Emerald Records
                         <br> 2019 Sun and Lightning - EP <em>"Pumpin Piano Man"</em> Emerald Records
                         <br> 2019 Sun and Lightning - LP <em>"Rock'n'Roll Show"</em> Emerald Records
-                        <br> 2022 Big Ralph - LP <em>"Sunset Surfin'"</em> Emerald Records
+                        <br> 2022 Big Ralph - LP <em>"Sunset Surfin'"</em> Starcatcher Records
                         <br> 2022 Dylan Kirk - LP <em>"King Of The Hop"</em> Emerald Records
+                        <br> 2022 Hit Parade Of Stars - LP and CD <em>"King Of The Hop"</em> Emerald Records
                     </p>
                 </div>
             </div>
